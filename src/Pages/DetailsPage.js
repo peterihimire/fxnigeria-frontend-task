@@ -15,7 +15,8 @@ class DetailsPage extends React.Component {
       <ProductConsumer>
         {(value) => {
           console.log(value);
-          const { getProduct, addToCart, openModal } = value;
+          // const { getProduct, addToCart, openModal } = value;
+          const { getProduct } = value;
           console.log(getProduct);
           const product = getProduct(this.state.id);
           console.log(product);
