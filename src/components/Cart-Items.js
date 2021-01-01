@@ -6,7 +6,9 @@ import img5 from "../assets/5.png";
 import img6 from "../assets/6.png";
 import img7 from "../assets/7.png";
 
-export default [
+let products;
+
+export default products = [
   {
     id: 1,
     title: "Samsung Galaxy S7",

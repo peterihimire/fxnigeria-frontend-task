@@ -3,19 +3,19 @@ import { FaCaretUp, FaCaretDown } from "react-icons/fa";
 
 const CartItem = ({ img, title, price, amount }) => {
   return (
-    <div>
-      <img src={img} alt={title} width='100px' height='100px' />
+    <div className="cart-item">
+      <img src={img} alt={title} width="50px" height="50px" />
       <div>
         <h4>{title}</h4>
-        <h4>${price}</h4>
-        <button>remove</button>
+        <h4 className="item-price">${price}</h4>
+        <button className="remove-btn">remove</button>
       </div>
       <div>
-        <button>
+        <button className="amount-btn">
           <FaCaretUp />
         </button>
-        <p>{amount}</p> 
-        <button>
+        <p className="amount">{amount}</p>
+        <button className="amount-btn">
           <FaCaretDown />
         </button>
       </div>
