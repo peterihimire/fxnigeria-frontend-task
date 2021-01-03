@@ -1,48 +1,31 @@
 import React from "react";
 import "./App.css";
+// items
+import cartItems from "./cart-items";
+// components
 import Navbar from "./components/Navbar";
-import cartItems from "./components/Cart-Items";
 import CartContainer from "./components/CartContainer";
+// redux things
 import { createStore } from "redux";
+import reducer from "./reducer";
+import { Provider } from "react-redux"; // react-redux - Provider - wraps app , connect - used in  components
 
 // intial store
 const initialStore = {
-  count: 0,
-  name: "Peter",
+  cart: cartItems,
+  total: 0,
+  amount: 0,
 };
 
-// reducer
-function reducer(state, action) {
-  console.log({ state, action });
-  if (action.type === "DECREASE") {
-    console.log("Hello, hope this worked.");
-    // state.count = state.count - 1;       This would mean we are mutating our state, which is not a good practice.
-    return { count: state.count - 1 };
-  }
-  if (action.type === "INCREASE") {
-    return { count: state.count + 1 };
-  }
-  if (action.type === "RESET") {
-    return { count: 0 };
-  }
-  return state;
-}
-
 // store
-const store = createStore(reducer, initialStore);
-store.dispatch({ type: "DECREASE" });
-store.dispatch({ type: "RESET" });
-store.dispatch({ type: "INCREASE" });
-store.dispatch({ type: "INCREASE" });
-
-console.log(store.getState());
+const warehouse = createStore(reducer, initialStore);
 
 function App() {
   return (
-    <>
-      <Navbar cart={store.getState()} />
-      <CartContainer cart={cartItems} />
-    </>
+    <Provider store={warehouse}>
+      <Navbar />
+      <CartContainer />
+    </Provider>
   );
 }
 
@@ -93,3 +76,32 @@ export default App;
 // }
 
 // export default App;
+
+// actions
+// const DECREASE = "DECREASE";
+// const INCREASE = "INCREASE";
+// const RESET = "RESET";
+// const CHANGE_NAME = "CHANGE_NAME";
+
+// reducer
+// function reducer(state, action) {
+//   console.log({ state, action });
+//   if (action.type === DECREASE) {
+//     console.log("Hello, hope this worked.");
+//     // state.count = state.count - 1;  This would mean we are mutating our state, which is not a good practice.
+//     // return { count: state.count - 1 };
+//     return { ...state, count: state.count - 1, name: "Beatrice" };
+//   }
+//   if (action.type === INCREASE) {
+//     return { ...state, count: state.count + 1 };
+//   }
+
+//   return state;
+// }
+
+// store.dispatch({ type: DECREASE });
+// store.dispatch({ type: INCREASE });
+// store.dispatch({ type: INCREASE });
+// store.dispatch({ type: INCREASE });
+// store.dispatch({ type: INCREASE });
+// console.log(store.getState());

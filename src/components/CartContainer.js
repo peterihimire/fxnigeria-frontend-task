@@ -1,12 +1,14 @@
 import React from "react";
 import CartItem from "./CartItem";
+import { connect } from "react-redux";
+import { CLEAR_CART } from "../actions";
 
-const CartContainer = ({ cart = [] }) => {
+const CartContainer = ({ cart = [], total, dispatch }) => {
   console.log(cart);
   if (cart.length === 0) {
     return (
       <section className="cart">
-        <header>
+        <header className="cart-empty-div">
           <h2>Your bag</h2>
           <h4 className="empty-cart">is currently empty</h4>
         </header>
@@ -29,14 +31,27 @@ const CartContainer = ({ cart = [] }) => {
             <hr />
             <div className="cart-total">
               <h4>
-                total <span> $0.00 </span>
+                Total <span> ${total} </span>
               </h4>
             </div>
-            <button className="btn clear-btn">clear cart</button>
+            <button
+              className="btn clear-btn"
+              onClick={() => dispatch({ type: CLEAR_CART })}
+            >
+              clear cart
+            </button>
           </footer>
         </div>
       </div>
     </section>
   );
 };
-export default CartContainer;
+function mapStateToProps(store) {
+  console.log(store);
+  const { cart, total } = store;
+  return { cart, total };
+}
+// function mapStateToProps(store) {
+//   return { cart: store.cart, total: store.total };
+// }
+export default connect(mapStateToProps)(CartContainer);

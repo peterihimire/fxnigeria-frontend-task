@@ -9,11 +9,50 @@
   margin: 0 0 1rem 0;
   color: white;
 }
-.cart-total {
+.cart-empty-div {
+  padding: 0 2rem;
+}
+.cart-total h4 {
   display: flex;
   justify-content: space-between;
+  padding: 1rem 0;
 }
-
+.cart-amt-div {
+  position: relative;
+}
+.cart-amt {
+  position: absolute;
+  color: white;
+  top: -48px;
+  left: 18px;
+  padding: 0.1rem 0.6rem;
+  background-color: rgb(27, 207, 183);
+  border-radius: 40%;
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+.shopping-div .fa-shopping-bag {
+  font-size: 3.7rem !important;
+}
+nav {
+  background-color: gray;
+  padding: 0 2rem;
+  color: white;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.btn {
+  padding: 1rem 2rem;
+  background-color: turquoise;
+  border: none;
+  /* color: white; */
+  text-transform: uppercase;
+  border-radius: 0.2rem;
+}
 .amount-btn {
   /* display: flex;
   align-items: center;

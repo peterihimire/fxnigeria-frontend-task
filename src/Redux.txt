@@ -4,7 +4,7 @@ REDUX BUILDING BLOCKS
 
 STORE - Global state in our app. Store and state are used interchangebly in our app. The difference between Context and Redux is the way we update our state , we cannot update STORE directly , it is updated by DISPATHCHING an ACTION. In Redux land store is used to hold our Data.
 
-ACTIONS -  We can think of ACTIONS  as what we want to do. To update the CART we will DISPATCH an add-to-cart ACTION. You want to open a MODAL you will dispatch open-modal ACTION. 
+ACTIONS -  We can think of ACTIONS  as what we want to do. To update the CART we will DISPATCH an add-to-cart ACTION. You want to open a MODAL you will dispatch open-modal ACTION. It is a good practice to setup ACTIONS as variables, so that we will avoid making some typos each time we want to setup an action.
 
 REDUCER - Once we DISPATCH an ACTION we can handle it in REDUCER. REDUCER is nothing but a function that takes 2 argument, STATE and ACTION.  We can think of STATE , as old state OR state before the action was performed, and the ACTION provides info of what type of action was dispatched. One key thing about REDUCER is that it does not MUTATE STATE, we will always return a new state from the REDUCER. In REDUCER will will handle what action was dispatched.
 
