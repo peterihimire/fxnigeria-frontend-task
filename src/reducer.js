@@ -43,8 +43,25 @@ function reducer(state, action) {
     };
   }
   if (action.type === GET_TOTAL) {
-    console.log("This is the get-total");
-    // return { ...state };
+    console.log(state);
+    let { total, amount } = state.cart.reduce(
+      (cartTotal, cartItem) => {
+        console.log(cartTotal, cartItem);
+        const { price, amount } = cartItem;
+        const itemTotal = price * amount;
+        cartTotal.total += itemTotal;
+        cartTotal.amount += amount;
+    
+        return cartTotal;
+      },
+      {
+        total: 0,
+        amount: 0,
+      }
+    );
+    total = parseFloat(total.toFixed(2))
+    console.log(total, amount);
+    return { ...state, total, amount };
   }
   return state;
 }
