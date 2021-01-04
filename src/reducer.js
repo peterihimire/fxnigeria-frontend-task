@@ -1,4 +1,4 @@
-import { DECREASE, INCREASE, CLEAR_CART, REMOVE } from "./actions";
+import { DECREASE, INCREASE, CLEAR_CART, REMOVE, GET_TOTAL } from "./actions";
 
 function reducer(state, action) {
   console.log({ state, action });
@@ -41,6 +41,10 @@ function reducer(state, action) {
         return cartItem.id !== action.payload.id;
       }),
     };
+  }
+  if (action.type === GET_TOTAL) {
+    console.log("This is the get-total");
+    // return { ...state };
   }
   return state;
 }
