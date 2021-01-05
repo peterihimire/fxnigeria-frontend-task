@@ -7,10 +7,10 @@ import Navbar from "./components/Navbar";
 import CartContainer from "./components/CartContainer";
 // redux things
 import { createStore } from "redux";
-import reducer from "./reducer";
 import { Provider } from "react-redux"; // react-redux - Provider - wraps app , connect - used in  components
+import reducer from "./reducer";
 
-// intial store
+// intial store which is the state
 const initialStore = {
   cart: cartItems,
   total: 0,

@@ -15,7 +15,7 @@ const CartItem = ({
   return (
     <div className="cart-item">
       <img src={img} alt={title} width="50px" height="50px" />
-      <div>
+      <div className="cart-title-container">
         <h4>{title}</h4>
         <h4 className="item-price">${price}</h4>
         <button className="remove-btn" onClick={() => remove()}>
