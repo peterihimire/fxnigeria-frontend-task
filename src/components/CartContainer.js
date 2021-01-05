@@ -42,7 +42,7 @@ const CartContainer = ({ cart = [], total, dispatch }) => {
               className="btn clear-btn"
               onClick={() => dispatch({ type: CLEAR_CART })}
             >
-              clear cart
+              clear bag
             </button>
           </footer>
         </div>

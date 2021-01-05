@@ -22,7 +22,7 @@ const CartItem = ({
           remove
         </button>
       </div>
-      <div>
+      <div className="amt-control-div">
         <button className="amount-btn" onClick={() => increase()}>
           <FaCaretUp />
         </button>

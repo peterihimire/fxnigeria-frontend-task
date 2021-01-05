@@ -1,11 +1,16 @@
 body {
-  background: rgb(228, 228, 253);
+  background: rgb(243, 243, 250);
 }
-
+header {
+  text-transform: uppercase;
+  padding: 2rem 0;
+}
 .cart-container {
   padding: 6rem 2rem;
 }
-
+.item-price {
+  color: grey;
+}
 .cart-item {
   display: flex;
   width: 300px;
@@ -65,10 +70,22 @@ nav {
   text-transform: uppercase;
   border-radius: 0.2rem;
 }
+.remove-btn {
+  background: none;
+  border: none;
+  color: rgb(240, 94, 10);
+}
 .amount-btn {
-  /* display: flex;
+  background: none;
+  border: none;
+  color: rgb(240, 94, 10);
+  font-size: 2rem;
+}
+.amt-control-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between; */
 }
 .cart-container-center {
   max-width: 300px;
